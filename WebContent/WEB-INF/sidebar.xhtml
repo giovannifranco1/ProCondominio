@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ph="http://primefaces.org/harmony">
+
+	<div class="layout-sidebar p-grid">
+		<div id="layout-menu" class="layout-menu">
+			<div style="background: none" class="card">
+				<h:form>
+					<p:panelMenu style="width:220px">
+						<p:submenu label="Cadastros"> 
+							<p:menuitem value="Condominio" icon="fas fa-building" action="/faces/admin/condominio/index.xhtml?faces-redirect=true"/>
+							<p:menuitem value="Estado" icon="fas fa-building" 	  action="/faces/admin/estado/index.xhtml?faces-redirect=true"/>
+							<p:menuitem value="Usuario" icon="pi pi-times"  	  action="/faces/admin/usuario/index.xhtml?faces-redirect=true"/>
+						</p:submenu>
+						<p:submenu label="Reservas">
+							<p:menuitem value="Website" url="http://www.primefaces.org"
+								icon="pi pi-external-link" />
+							<p:menuitem value="Internal" icon="pi pi-upload" />
+						</p:submenu>
+					</p:panelMenu>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</ui:composition>

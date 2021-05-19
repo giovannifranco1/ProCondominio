@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" lang="en">
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+	<h:outputStylesheet name="primeflex.css" library="css" />
+	<h:outputStylesheet name="index.css" library="css" />
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="content">
+			<p:growl id="message">
+				<p:autoUpdate />
+			</p:growl>
+			<div class="p-grid">
+				<div class="ui-card p-col-12 p-md-4 p-mx-auto p-px-5 p-pt-5 p-pb-3">
+					<h:form>
+						<h1 class="p-text-center p-mt-2 p-mb-3">Login</h1>
+						<div class="p-col-12">
+							<div class="p-field p-grid">
+								<label for="login" class="p-col-fixed" style="width: 100px">Login</label>
+								<div class="p-col">
+									<p:inputText id="login" type="text" value="#{loginController.entity.login}" />
+								</div>
+							</div>
+							<div class="p-field p-grid">
+								<label for="senha" class="p-col-fixed" style="width: 100px">Senha</label>
+								<div class="p-col">
+									<p:inputText id="senha" type="password" value="#{loginController.entity.senha}" />
+								</div>
+							</div>
+							<div>
+								<p:commandButton class="p-mr-2" value="Entrar" action="#{loginController.logar}" />
+								<p:commandButton value="Cadastrar" />
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

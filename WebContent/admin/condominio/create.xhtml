@@ -44,11 +44,13 @@
 									</div>
 									<div class="ui-fluid p-col-12 p-md-4">
 										<p:outputLabel for="@next" value="Estado"/>
-										<p:selectOneMenu id="estado" value="#{condominioController.entity.endereco.estado}" required="true">
+										<!-- <p:selectOneMenu id="estado" value="#{condominioController.entity.endereco.estado}" required="true">
 											<f:selectItem itemLabel="Selecione ..." />
 											<f:selectItems value="#{estadoController.estadoList}"
 												var="i" itemLabel="#{i.nome}" />
-										</p:selectOneMenu>
+										</p:selectOneMenu> -->
+										<p:autoComplete var="obj" itemLabel="#{obj.nome}" itemValue="#{obj}" value="#{condominioController.entity.endereco.estado}"
+                            			completeMethod="#{estadoController.filtrarEstados}" scrollHeight="250" dropdown="true"/>
 									</div>
 									<div class="ui-fluid p-col-12 p-md-2">
 										<p:outputLabel value="DDD"  />

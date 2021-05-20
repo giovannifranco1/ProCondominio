@@ -1,6 +1,7 @@
 package br.unitins.procondominio.models;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -25,7 +26,7 @@ public class Endereco extends DefaultEntity<Endereco>{
 	private String cep;
 	private String cidade;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_estado")
 	private Estado estado;
 	

@@ -43,17 +43,18 @@
 											<h:outputText value="#{condominio.endereco.numero}"/>
 										</p:column>
 										
-										<p:column headerText="Rua" sortBy="#{condominio.endereco.rua}">
+										<p:column headerText="Rua" sortBy="#{condominio.endereco.rua}" styleClass="p-text-center">
 											<h:outputText value="#{condominio.endereco.rua}"/>
 										</p:column>
 										
 										
-										<p:column exportable="false">
-											<p:commandButton icon="pi pi-pencil"
+										<p:column exportable="false" styleClass="p-text-center">
+											<p:commandButton icon="pi pi-pencil styleClass="p-text-center""
 												actionListener="#{condominioController.edit(condominio)}"
 												styleClass="edit-button rounded-button ui-button-success">
 											</p:commandButton>
 											<p:commandButton 
+												styleClass="p-text-center"
 												class="ui-button-warning rounded-button"
 												icon="pi pi-trash" 
 												action="#{condominioController.destroy(condominio)}" process="@this" update="@this @form" >

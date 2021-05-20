@@ -1,6 +1,7 @@
 package br.unitins.procondominio.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
@@ -62,6 +63,13 @@ public class EstadoController extends Controller<Estado> {
 			}
 		}
 		return estadoList;
+	}
+	public List<Estado> filtrarEstados(String nome){
+		String filtro = nome.toLowerCase();
+		return getEstadoList().stream().filter(e ->{
+			String nomeEstado = e.getNome().toLowerCase();
+			return nomeEstado.startsWith(filtro);
+		}).collect(Collectors.toList());
 	}
 
 }

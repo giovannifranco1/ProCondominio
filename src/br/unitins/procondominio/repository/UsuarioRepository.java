@@ -18,7 +18,27 @@ public class UsuarioRepository extends Repository<Usuario>{
 	public UsuarioRepository(EntityManager em) {
 		super(em);
 	}
-	
+	public Usuario findByEmail(String email) throws RepositoryException {
+		EntityManager em = getEntityManager();
+		StringBuffer jpql = new StringBuffer();
+		jpql.append("SELECT ");
+		jpql.append(" u ");
+		jpql.append("FROM ");
+		jpql.append(" Usuario u ");
+		jpql.append("WHERE ");
+		jpql.append(" u.login = :email ");
+		
+		Query query = em.createQuery(jpql.toString());
+		query.setParameter("email", email);
+		
+		Usuario usuario = null;
+		try {
+			usuario = (Usuario) query.getSingleResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return usuario;
+	}
 	public List<Usuario> findAll() throws RepositoryException {
 		EntityManager em = getEntityManager();
 		StringBuffer jpql = new StringBuffer();

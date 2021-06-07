@@ -10,7 +10,8 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
 		<class>br.unitins.procondominio.models.Estado</class>
 		<class>br.unitins.procondominio.models.Condominio</class>
 		<class>br.unitins.procondominio.models.Usuario</class>
-	<properties>
+		<class>br.unitins.procondominio.models.RecuperarSenha</class>
+		<properties>
 			<!-- DB Driver -->
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />

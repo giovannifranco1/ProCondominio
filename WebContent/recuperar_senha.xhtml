@@ -31,15 +31,15 @@
 							<div class="p-grid">
 								<div class="ui-fluid p-col-12 	">
 									<p:outputLabel for="@next" value="Informe o codigo" />
-									<p:inputText id="codigo" required="true" value="#{recuperarSenhaController.codigo}"/>
+									<p:inputMask id="codigo" required="true" mask="999-999" value="#{recuperarSenhaController.codigo}"/>
 								</div>
 								<div class="ui-fluid p-col-12 	">
-									<p:outputLabel for="@next" value="senha" />
-									<p:inputText id="senha" required="true" value="#{recuperarSenhaController.senha}"/>
+									<p:outputLabel for="@next" value="Senha" />
+									<p:inputText type="password" id="senha" required="true" value="#{recuperarSenhaController.senha}"/>
 								</div>
 								<div class="ui-fluid p-col-12 	">
-									<p:outputLabel for="@next" value="confirmar senha" />
-									<p:inputText id="confirmar" required="true" value="#{recuperarSenhaController.confirmarSenha}"/>
+									<p:outputLabel for="@next" value="Confirmar Senha" />
+									<p:inputText id="confirmar" type="password" required="true" value="#{recuperarSenhaController.confirmarSenha}"/>
 								</div>
 							</div>
 								<p:commandButton 

@@ -24,12 +24,13 @@
 				<p:autoUpdate />
 			</p:growl>
 			<div class="p-grid">
+			
 				<div class="ui-card p-col-12 p-md-4 p-mx-auto p-px-5 p-pt-5 p-pb-3">
 					<h:form>
 						<h2 class="p-text-center p-mt-2 p-mb-3">Esqueceu a senha</h2>
 						<div class="p-col-12">
 							<div class="p-grid">
-								<div class="ui-fluid p-col-12 	">
+								<div class="ui-fluid p-col-12">
 									<p:outputLabel class="p-mb-2" for="@next" value="Email" />
 									<p:inputMask id="sigla" required="true" value="#{esqueceuSenhaController.email}" >
 										<p:keyFilter regEx="^[a-z0-9.]+@[a-z0-9]+\.[a-z]+$" />

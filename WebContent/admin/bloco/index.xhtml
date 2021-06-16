@@ -25,33 +25,33 @@
 									</p:toolbar>
 
 									<p:dataTable id="dt-products" widgetVar="dtUsuario"
-										var="obj" value="#{usuarioController.listUsuario}" reflow="true"
+										var="obj" value="#{blocoController.blocoList}" reflow="true"
 										styleClass="products-table"
-										rowKey="#{condominio.id}" paginator="true" rows="10"
+										rowKey="#{bloco.id}" paginator="true" rows="10"
 										rowSelectMode="add" paginatorPosition="bottom">
 
 									
-										<p:column headerText="Login" sortBy="#{obj.login}">
-											<h:outputText value="#{obj.login}"/>
+										<p:column headerText="Nome" sortBy="#{obj.nome}">
+											<h:outputText value="#{obj.nome}"/>
 										</p:column>
 										
-										<p:column headerText="Senha" sortBy="#{obj.senha}">
-											<h:outputText value="#{obj.senha}"/>
+										<p:column headerText="Condominio" sortBy="#{obj.condominio}">
+											<h:outputText value="#{obj.condominio}"/>
 										</p:column>
 										
-										<p:column headerText="Tipo de Usuario" sortBy="#{obj.tipoUsuario}" >
-											<h:outputText value="#{obj.tipoUsuario}"/>
+										<p:column headerText="Tipo de Usuario" sortBy="#{obj.numeroApartamento}" >
+											<h:outputText value="#{obj.numeroApartamento}"/>
 										</p:column>
 										
 										<p:column exportable="false" class="p-text-center">
 											<p:commandButton icon="pi pi-pencil"
-												actionListener="#{usuarioController.edit(obj)}"
+												actionListener="#{blocoController.edit(obj)}"
 												styleClass="edit-button rounded-button ui-button-success">
 											</p:commandButton>
 											<p:commandButton 
 												class="ui-button-warning rounded-button p-ml-4" 
 												icon="pi pi-trash" 
-												action="#{condominioController.destroy(condominio)}" process="@this" update="@this @form" >
+												action="#{blocoController.destroy(obj)}" process="@this" update="@this @all" >
 											</p:commandButton>
 										</p:column>
 

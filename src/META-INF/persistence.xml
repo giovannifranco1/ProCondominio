@@ -11,6 +11,10 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
 		<class>br.unitins.procondominio.models.Condominio</class>
 		<class>br.unitins.procondominio.models.Usuario</class>
 		<class>br.unitins.procondominio.models.RecuperarSenha</class>
+		<class>br.unitins.procondominio.models.AreaComum</class>
+		<class>br.unitins.procondominio.models.Bloco</class>
+		<class>br.unitins.procondominio.models.Reserva</class>
+		<class>br.unitins.procondominio.models.Morador</class>
 		<properties>
 			<!-- DB Driver -->
 			<property name="javax.persistence.jdbc.driver"

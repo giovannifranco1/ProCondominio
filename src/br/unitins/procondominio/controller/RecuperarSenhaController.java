@@ -94,6 +94,7 @@ public class RecuperarSenhaController implements Serializable {
 			Util.addErrorMessage("Codigo invalido!");
 			return;
 		}
+		getUsuario().setSenha(this.senha);
 		Repository<Usuario> repoUsuario = new Repository<Usuario>();
 		try {
 			repoUsuario.beginTransaction();
@@ -104,6 +105,7 @@ public class RecuperarSenhaController implements Serializable {
 			repoUsuario.rollbackTransaction();
 			return;
 		}
+		System.out.println(getUsuario().getSenha());
 		Util.redirect("login.xhtml");
 	}
 	

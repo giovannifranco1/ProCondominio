@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+	<ui:define name="head">
+		<h:outputStylesheet name="primeflex.css" library="css" />
+	</ui:define>
+	<ui:define name="content">
+		<div class="container">
+			<div class="content">
+				<div class="p-grid">
+				<div class="p-text-right">
+					<p:commandButton value="voltar" action="/faces/admin/condominio/index.xhtml?faces-redirect=true"/>
+				</div>
+					<div class="p-col-8 p-m-auto">
+						<h2 style="color: #fff;" class="p-text-center">Cadastro de Morador</h2>
+						<div class="ui-card p-p-2">
+							<h:form id="formCondominio">
+								<div class="p-grid">
+									<div class="ui-fluid p-col-12 p-md-6">
+										<p:outputLabel for="@next" value="Nome" />
+										<p:inputText id="nome" value="#{moradorController.entity.nome}" required="true" />
+									</div>
+									<div class="ui-fluid p-col-12 p-md-6">
+										<p:outputLabel for="@next" value="Cpf" />
+										<p:inputMask id="cpnj" placeholder="999.999.999-99" mask="999.999.999-99" value="#{moradorController.entity.cpf}" required="true"/>
+									</div>
+									<div class="ui-fluid p-col-12 p-md-6">
+										<p:outputLabel for="@next" value="Data de Nascimento" />
+										<p:datePicker id="dataNascimento" value="#{moradorController.data}" />
+									</div>
+									<div class="ui-fluid p-col-12 p-md-6">
+										<p:outputLabel for="@next" value="Bloco" />
+										<p:selectOneMenu 
+											value="#{moradorController.entity.bloco}">
+											<f:selectItem itemLabel="Selecione ..."/>
+											<f:selectItems 
+												value="#{blocoController.blocoList}"
+												var="obj"
+												itemLabel="#{obj.nome}"
+												itemValue="#{obj}"/>
+										</p:selectOneMenu>
+									</div>
+									
+									<div class="ui-fluid p-col-12 p-md-2">
+										<p:outputLabel value="DDD"  />
+										<p:inputText value="#{moradorController.entity.telefone.codigoPostal}" />
+									</div>
+									<div class="ui-fluid p-col-12 p-md-6">
+										<p:outputLabel value="Numero do Telefone"/>
+										<p:inputText value="#{moradorController.entity.telefone.numero}" placeholder="99999-9999"/>
+									</div>
+									<div class="ui-fluid p-col-12">
+										<p:outputLabel value="Foto"  />
+										<p:inputText  />
+									</div>
+								</div>
+								<div class="p-grid">
+									<div class="p-col-12 p-mt-2">
+										<p:commandButton class="ui-button-success p-mr-2" value="Cadastrar" action="#{condominioController.store}" update="@form"/>
+										<p:commandButton value="Limpar" action="#{condominioController.limpar}" update="@form"/>
+									</div>
+								</div>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,11 +1,13 @@
 package br.unitins.procondominio.models;
 
 public class FaleConosco {
+	
 	private String nome;
 	private String email;
 	private String assunto;
 	private String telefone;
 	private String mensagem;
+	
 	public String getNome() {
 		return nome;
 	}
